@@ -13,5 +13,39 @@
     </head>
     <body>
       <h1>Browser Template</h1>
+
+      <div id="unauthenticated">
+          <form id="sign-up">
+            <input name="credentials[email]" placeholder="Email" type="text">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <button type="submit">Sign Up!</button>
+          </form>
+
+          <form id="sign-in">
+            <input name="credentials[email]" placeholder="Email" type="text">
+            <input type="password" name="credentials[password]" placeholder="Password" >
+            <button type="submit">Sign In</button>
+          </form>
+      </div>
+
+
+      <div id="authenticated">
+        <form id="change-password">
+          <input name="passwords[old]" placeholder="Old Password" type="password">
+          <input name="passwords[new]" placeholder="New Password" type="password">
+          <button type="submit">Change Password</button>
+        </form>
+
+        <form id="sign-out">
+          <button type="submit">Sign Out</button>
+        </form>
+      </div>
+
+
+
+
+
+
     </body>
 </html>
