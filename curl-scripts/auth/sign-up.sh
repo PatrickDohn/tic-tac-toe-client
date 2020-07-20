@@ -5,7 +5,7 @@ curl 'https://tic-tac-toe-api-development.herokuapp.com/sign-up' \
   --data '{
     "credentials": {
       "email": "'"${EMAIL}"'",
-      "password": "'"$PASSWORD"'"
+      "password": "'"${PASSWORD}"'",
       "password_confirmation": "'"${PASSWORD}"'"
     }
   }'

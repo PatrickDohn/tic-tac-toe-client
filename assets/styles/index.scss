@@ -1,1 +1,27 @@
 @import '~bootstrap/scss/bootstrap';
+
+table {
+  margin: 0 auto;
+  height: 400px;
+  width: 400px;
+}
+
+td {
+  border: 1px solid black;
+  font-size: 100px;
+  text-align: center;
+
+
+}
+
+td:hover {
+  background-color: lightgrey;
+}
+
+#authenticated {
+  display: none;
+}
+
+.game-start {
+  margin: 0 auto;
+}
