@@ -1,22 +1,47 @@
 @import '~bootstrap/scss/bootstrap';
 
-table {
+.board-div {
   margin: 0 auto;
   height: 400px;
   width: 400px;
-}
-
-td {
-  border: 1px solid black;
-  font-size: 100px;
-  text-align: center;
-
 
 }
 
-td:hover {
-  background-color: lightgrey;
+.board {
+  margin: 0 auto;
+  max-height: calc(100vh - 75px);
+  max-width: calc(100vh - 75px);
 }
+
+.game-position {
+  border-right: 1px solid black;
+
+  border-bottom: 1px solid black;
+
+  &:nth-child(3n) {
+    border-right: 0;
+  }
+
+  &:nth-last-child(-1n + 3) {
+    border-bottom: 0;
+  }
+
+  font-size: 15vh;
+  text-shadow: 2px 2px rgba(0, 0, 0, .25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: lightgrey;
+  }
+
+  user-select: none;
+
+
+
+}
+
 
 #authenticated {
   display: none;
