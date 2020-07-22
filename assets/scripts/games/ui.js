@@ -1,8 +1,8 @@
 const store = require('../store')
 
-const gameStartSuccess = function (game) {
-  console.log(game, 'game started')
-  store.game = game
+const gameStartSuccess = function (response) {
+  console.log(response, response.game)
+  store.game = response.game
 }
 
 let turn = true
@@ -10,6 +10,7 @@ let turn = true
 store.player = 'X'
 
 const clickPosition = function (response) {
+  console.log(response.game)
   store.game = response.game
   $(store.clickedCell).text(store.player)
   const player = turn ? 'O' : 'X'
