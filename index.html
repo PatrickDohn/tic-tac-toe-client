@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -47,27 +47,57 @@
 
         <div>
 
-            <table>
-              <tbody id="game-board">
-                  <tr>
-                    <td class="game-position" id="1"></td>
-                    <td class="game-position" id="2"></td>
-                    <td class="game-position" id="3"></td>
-                  </tr>
+          <div>
+            <p id="playersTurn"></p>
+            <p id="p1tally"></p>
+            <p id="p2tally"></p>
+          </div>
 
-                  <tr>
-                    <td class="game-position" id="4"></td>
-                    <td class="game-position" id="5"></td>
-                    <td class="game-position" id="6"></td>
-                  </tr>
+            <div class="board-div">
 
-                  <tr>
-                    <td class="game-position" id="7"></td>
-                    <td class="game-position" id="8"></td>
-                    <td class="game-position" id="9"></td>
-                  </tr>
-              </tbody>
-            </table>
+                  <div class="row h-100 board">
+                    <div class="game-position col-4" data-cell-index='1'></div>
+                    <div class="game-position col-4" data-cell-index='2'></div>
+                    <div class="game-position col-4" data-cell-index='3'></div>
+
+
+
+                    <div class="game-position col-4" data-cell-index='4'></div>
+                    <div class="game-position col-4" data-cell-index='5'></div>
+                    <div class="game-position col-4" data-cell-index='6'></div>
+
+
+
+                    <div class="game-position col-4" data-cell-index='7'></div>
+                    <div class="game-position col-4" data-cell-index='8'></div>
+                    <div class="game-position col-4" data-cell-index='9'></div>
+                  </div>
+            </div>
+
+            <!-- Button trigger modal -->
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+              Launch demo modal
+            </button> -->
+
+            <!-- Modal -->
+            <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="winning-message">X WINS!!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                        Play again?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Restart</button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
 
           <form id="game-start">
             <button class="game-start" type="submit">Start a New Game</button>

@@ -13,18 +13,18 @@ const gameStart = function (formData) {
   })
 }
 
-const gamePosition = function (cellIndex) {
+const gamePosition = function (index, player) {
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    url: config.apiUrl + '/games/' + store.game.game._id,
+    url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
     data: {
       game: {
         cell: {
-          index: cellIndex,
-          value: store.player
+          index: index,
+          value: player
         },
         over: false
       }
