@@ -32,11 +32,21 @@ const switchPlayer = function () {
   }
 }
 
+const whoWon = function (response) {
+  for (let i = 0; i < winningCombos.length; i++) {
+  // assign combos to winningCombos[i] so I dont have to retype as much
+    const combos = winningCombos[i]
+    console.log(response.game.cells[combos[0]] + response.game.cells[combos[1]] + response.game.cells[combos[2]])
+    // compare cells that have been clicked on to each index of winningCombos
+    if (response.game.cells[combos[0]] === response.game.cells[combos[1]] && response.game.cells[combos[1]] === response.game.cells[combos[2]] && response.game.cells[combos[2]] !== '') {
+      ($('#playersTurn').text('Player ' + store.player + ' wins!'))
+    }
+  }
+}
+
 const onGamePosition = function (event) {
   console.log(store.player)
   const cell = event.target.id
-  // if cell value is not null make Api request if not alert cell full
-  console.log('you clicked' + cell)
   event.preventDefault()
   api.gamePosition(parseInt(cell) - 1)
     .then(response => {
@@ -48,11 +58,7 @@ const onGamePosition = function (event) {
     })
 }
 
-const whoWon = function (cells) {
-  if (cells[0, 1, 2] ===
 
-  }
-}
 
 module.exports = {
   onGameStart: onGameStart,

@@ -5,15 +5,9 @@ const gameStartSuccess = function (game) {
   store.game = game
 }
 
-
-
-
-
 const clickPosition = function (id, game) {
-  console.log('You played X')
   console.log(game)
   store.game = game
-  $('#' + id).text(store.player)
   console.log(id)
 }
 
