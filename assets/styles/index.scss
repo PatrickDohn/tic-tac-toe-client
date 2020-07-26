@@ -38,15 +38,20 @@
   }
 
   user-select: none;
-
-
-
 }
 
 
 #authenticated {
   display: none;
 }
+
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+
 
 .new-game {
   margin: 0 auto;

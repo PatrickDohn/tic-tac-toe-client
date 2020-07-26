@@ -3,7 +3,7 @@ const store = require('../store')
 const newGameSuccess = function (response) {
   console.log(response, response.game)
   store.game = response.game
-  $('.game-position').empty('')
+  $('.game-position').text('')
   $('.board-div').show()
 }
 

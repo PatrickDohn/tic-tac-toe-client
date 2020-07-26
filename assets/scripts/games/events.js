@@ -28,7 +28,6 @@ const onGamePosition = function (clickEvent) {
 module.exports = {
   onNewGame: onNewGame,
   onGamePosition: onGamePosition
-  // switchPlayer: switchPlayer,
 }
 
 // use the store to hold what piece is being played. Use the game array to find patterns for winning positions. Verify position being filled.
