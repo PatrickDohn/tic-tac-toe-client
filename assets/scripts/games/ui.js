@@ -1,8 +1,10 @@
 const store = require('../store')
 
-const gameStartSuccess = function (response) {
+const newGameSuccess = function (response) {
   console.log(response, response.game)
   store.game = response.game
+  $('.game-position').empty('')
+  $('.board-div').show()
 }
 
 let turn = true
@@ -17,7 +19,7 @@ const clickPosition = function (response) {
   console.log(player)
   turn = !turn
   store.player = player
-  $('#playersTurn').text('Player ' + store.player)
+  $('#playersTurn').text('Player ' + store.player + ' turn!')
   // for loop to go through the array of winning combos
   const winningCombos = [
     [0, 1, 2],
@@ -35,12 +37,13 @@ const clickPosition = function (response) {
     console.log(response.game.cells[combos[0]] + response.game.cells[combos[1]] + response.game.cells[combos[2]])
     // compare cells that have been clicked on to each index of winningCombos
     if (response.game.cells[combos[0]] === response.game.cells[combos[1]] && response.game.cells[combos[1]] === response.game.cells[combos[2]] && response.game.cells[combos[2]] !== '') {
-      ($('#playersTurn').text('Player ' + store.player + ' wins!'))
+      $('#gameMessage').text('Player ' + response.game.cells[combos[0]] + ' wins')
+      $('.game-position').off('click')
     }
   }
 }
 
 module.exports = {
-  gameStartSuccess: gameStartSuccess,
+  newGameSuccess: newGameSuccess,
   clickPosition: clickPosition
 }

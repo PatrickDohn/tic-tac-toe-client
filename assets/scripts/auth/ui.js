@@ -16,6 +16,7 @@ const signInSuccess = function (response) {
   console.log('token:', store.user.token)
   $('#authenticated').show()
   $('#unauthenticated').hide()
+  $('.board-div').hide()
 }
 const signInFail = function () {
   $('#message').text('Sign in failed')

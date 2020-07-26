@@ -1,7 +1,7 @@
 const config = require('../config')
 const store = require('../store')
 
-const gameStart = function (formData) {
+const newGame = function (formData) {
   console.log(store)
   return $.ajax({
     headers: {
@@ -33,6 +33,6 @@ const gamePosition = function (index, player) {
 }
 
 module.exports = {
-  gameStart: gameStart,
+  newGame: newGame,
   gamePosition: gamePosition
 }

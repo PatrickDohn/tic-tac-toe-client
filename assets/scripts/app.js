@@ -13,6 +13,6 @@ $(() => {
   $('#sign-out').on('submit', authEvents.onSignOut)
 
   // game auth
-  $('#game-start').on('click', gameEvents.onGameStart)
+  $('#new-game').on('click', gameEvents.onNewGame)
   $('.game-position').on('click', gameEvents.onGamePosition)
 })

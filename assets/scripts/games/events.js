@@ -3,14 +3,13 @@ const api = require('./api')
 const ui = require('./ui')
 const store = require('../store')
 
-const onGameStart = function (event) {
+const onNewGame = function (event) {
   // prevent refreshing the page everytime
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  api.gameStart(formData)
-    .then(ui.gameStartSuccess)
-    .catch(ui.gameStartFailure)
+  api.newGame(formData)
+    .then(ui.newGameSuccess)
 }
 
 const onGamePosition = function (clickEvent) {
@@ -27,7 +26,7 @@ const onGamePosition = function (clickEvent) {
 }
 
 module.exports = {
-  onGameStart: onGameStart,
+  onNewGame: onNewGame,
   onGamePosition: onGamePosition
   // switchPlayer: switchPlayer,
 }
