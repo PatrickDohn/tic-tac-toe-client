@@ -12,6 +12,16 @@ body {
   flex-direction: column;
 }
 
+#change-password {
+  display: flex;
+  justify-content: center;
+}
+
+#sign-out {
+  display: flex;
+  justify-content: center;
+}
+
 
 .board-div {
   height: 100vh;

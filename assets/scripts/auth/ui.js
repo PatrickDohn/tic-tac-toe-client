@@ -34,6 +34,9 @@ const signOutSuccess = function () {
   $('#message').text('Signed out success!')
   $('#unauthenticated').show()
   $('#authenticated').hide()
+  $('#gamesPlayed').text('')
+  $('#playersTurn').text('')
+  $('#winningMessage').text('')
 }
 
 const signOutFail = function () {

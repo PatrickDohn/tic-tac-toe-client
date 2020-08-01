@@ -13,6 +13,8 @@ const newGameSuccess = function (response) {
   $('.game-position').css('pointer-events', 'auto')
   $('.game-position').text('')
   $('.board-div').show()
+  $('#gamesPlayed').text('')
+  $('#message').text('')
   counterSquare = 0
 }
 
@@ -57,7 +59,7 @@ const clickPosition = function (response) {
       $('#winningMessage').text('Player ' + store.player + ' wins!')
       $('.game-position').css('pointer-events', 'none')
       // $('#gamesPlayed').text('You have played ' + numWins)
-      $('#gamesPlayed').text('You have played ' + response.game)
+      $('#gamesPlayed').text('You have played ' + numWins)
     }
   }
   switchPlayer()
