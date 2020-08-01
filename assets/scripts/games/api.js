@@ -13,7 +13,7 @@ const newGame = function (formData) {
   })
 }
 
-const gamePosition = function (index, player) {
+const gamePosition = function (player) {
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -23,7 +23,7 @@ const gamePosition = function (index, player) {
     data: {
       game: {
         cell: {
-          index: index,
+          index: store.clickedCell.getAttribute('data-cell-index'),
           value: player
         },
         over: false
@@ -32,7 +32,19 @@ const gamePosition = function (index, player) {
   })
 }
 
+const getGames = function () {
+  console.log('am I working')
+  return $.ajax({
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    url: config.apiUrl + '/games',
+    method: 'GET'
+  })
+}
+
 module.exports = {
   newGame: newGame,
-  gamePosition: gamePosition
+  gamePosition: gamePosition,
+  getGames: getGames
 }

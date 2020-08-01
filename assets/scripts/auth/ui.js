@@ -9,7 +9,7 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (response) {
-  $('#message').text('Sign in success')
+  $('#message').text('Welcome back!')
   console.log(store)
   store.user = response.user
   console.log('store:', store)
