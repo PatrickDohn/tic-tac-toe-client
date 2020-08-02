@@ -24,7 +24,7 @@ const onGamePosition = function (clickEvent) {
 }
 
 const onGetGames = function () {
-  //console.log('This is onGetGames')
+  // console.log('This is onGetGames')
   api.getGames()
     .then(ui.showGamesPlayedSuccess)
 }

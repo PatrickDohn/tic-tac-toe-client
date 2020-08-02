@@ -20,7 +20,7 @@ const newGameSuccess = function (response) {
 
 const showGamesPlayedSuccess = function (response) {
   const gamesPlayed = response.games.length
-  $('#gamesPlayed').text('This is your ' + gamesPlayed + ' game played')
+  $('#gamesPlayed').text('You have played' + gamesPlayed + ' games')
 }
 
 const switchPlayer = function () {
