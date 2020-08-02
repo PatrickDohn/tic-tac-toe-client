@@ -21,12 +21,6 @@ Technologies Used:
   - Javascript
 
 
-Unsolved Problems:
-
-  - Still need to finish making the game
-  - Would like to eventually style it nice and get the modal to work
-
-
 
 Wireframe:
 

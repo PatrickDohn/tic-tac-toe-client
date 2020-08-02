@@ -7,15 +7,15 @@ const onNewGame = function (event) {
   // prevent refreshing the page everytime
   event.preventDefault()
   const form = event.target
-  console.log('Waht am i', form)
+  //console.log('Waht am i', form)
   const formData = getFormFields(form)
-  console.log('What am i?', formData)
+  //console.log('What am i?', formData)
   api.newGame(formData)
     .then(ui.newGameSuccess)
 }
 
 const onGamePosition = function (clickEvent) {
-  console.log(store.player)
+  //console.log(store.player)
   store.clickedCell = clickEvent.target
   if (store.clickedCell.innerText === '') {
     api.gamePosition(store.player)
@@ -24,7 +24,7 @@ const onGamePosition = function (clickEvent) {
 }
 
 const onGetGames = function () {
-  console.log('This is onGetGames')
+  //console.log('This is onGetGames')
   api.getGames()
     .then(ui.showGamesPlayedSuccess)
 }

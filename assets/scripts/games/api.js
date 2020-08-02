@@ -2,7 +2,7 @@ const config = require('../config')
 const store = require('../store')
 
 const newGame = function (formData) {
-  console.log(store)
+  //console.log(store)
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -33,7 +33,7 @@ const gamePosition = function (player) {
 }
 
 const getGames = function () {
-  console.log('am I working')
+  // console.log('am I working')
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token

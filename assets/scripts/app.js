@@ -15,4 +15,5 @@ $(() => {
   // game auth
   $('#new-game').on('click', gameEvents.onNewGame)
   $('.game-position').on('click', gameEvents.onGamePosition)
+  $('#new-game').on('click', gameEvents.onGetGames)
 })

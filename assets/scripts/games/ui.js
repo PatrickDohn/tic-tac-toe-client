@@ -2,10 +2,10 @@ const store = require('../store')
 const api = require('./api')
 
 let counterSquare = 0
-let numWins = 0
+
 
 const newGameSuccess = function (response) {
-  console.log(response, response.game)
+  //console.log(response, response.game)
   store.game = response.game
   store.player = 'X'
   $('#playersTurn').text('')
@@ -18,11 +18,10 @@ const newGameSuccess = function (response) {
   counterSquare = 0
 }
 
-// const showGamesPlayedSuccess = function () {
-//   const gamesPlayed = store.games.length
-//   console.log(gamesPlayed)
-//   $('#games-played').text('You have played ')
-// }
+const showGamesPlayedSuccess = function (response) {
+  const gamesPlayed = response.games.length
+  $('#gamesPlayed').text('This is your ' + gamesPlayed + ' game played')
+}
 
 const switchPlayer = function () {
   store.player = (store.player === 'X') ? 'O' : 'X'
@@ -51,15 +50,11 @@ const clickPosition = function (response) {
     // const fullBoard = ['', '', '', '', '', '', '', '', '']
     const combos = winningCombos[i]
     const gameCells = response.game.cells
-    console.log(gameCells[combos[0]] + gameCells[combos[1]] + gameCells[combos[2]])
+    // console.log(gameCells[combos[0]] + gameCells[combos[1]] + gameCells[combos[2]])
     // compare cells that have been clicked on to each index of winningCombos
     if (gameCells[combos[0]] === gameCells[combos[1]] && gameCells[combos[1]] === gameCells[combos[2]] && gameCells[combos[2]] !== '') {
-      numWins++
-      console.log(numWins)
       $('#winningMessage').text('Player ' + store.player + ' wins!')
       $('.game-position').css('pointer-events', 'none')
-      // $('#gamesPlayed').text('You have played ' + numWins)
-      $('#gamesPlayed').text('You have played ' + numWins)
     }
   }
   switchPlayer()
@@ -78,12 +73,7 @@ tieGame()
 
 module.exports = {
   newGameSuccess: newGameSuccess,
-  clickPosition: clickPosition
-  // showGamesPlayedSuccess: showGamesPlayedSuccess
+  clickPosition: clickPosition,
+  showGamesPlayedSuccess: showGamesPlayedSuccess
+
 }
-
-/*
-events.js:10 was the data returned verified and if so, what would formData look like on the first game and a second game?
-
-
- */
