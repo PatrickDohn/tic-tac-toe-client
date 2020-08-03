@@ -5,7 +5,7 @@ let counterSquare = 0
 
 
 const newGameSuccess = function (response) {
-  //console.log(response, response.game)
+  // console.log(response, response.game)
   store.game = response.game
   store.player = 'X'
   $('#playersTurn').text('')
@@ -20,7 +20,7 @@ const newGameSuccess = function (response) {
 
 const showGamesPlayedSuccess = function (response) {
   const gamesPlayed = response.games.length
-  $('#gamesPlayed').text('You have played' + gamesPlayed + ' games')
+  $('#gamesPlayed').text('You have played ' + gamesPlayed + ' games')
 }
 
 const switchPlayer = function () {

@@ -10,10 +10,10 @@ const signUpFailure = function () {
 
 const signInSuccess = function (response) {
   $('#message').text('Welcome back!')
-  //console.log(store)
+  // console.log(store)
   store.user = response.user
-  //console.log('store:', store)
-  //console.log('token:', store.user.token)
+  // console.log('store:', store)
+  // console.log('token:', store.user.token)
   $('#authenticated').show()
   $('#unauthenticated').hide()
   $('.board-div').hide()
